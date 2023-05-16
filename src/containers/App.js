@@ -2,8 +2,9 @@ import React, { Component } from 'react';
 
 import SearchBox from '../components/SearchBox';
 import CardList from '../components/CardList';
-import Scroll from '../components/Scroll';
+import Sticky from '../components/Sticky';
 import './App.css';
+import ErrorBoundry from '../components/ErrorBoundry';
 
 class App extends Component {
   constructor() {
@@ -34,11 +35,13 @@ class App extends Component {
       <h1>Loading</h1>
     ) : (
       <div className='tc'>
-        <h1 className='tc f1'>RoboFriends</h1>
-        <SearchBox searchChange={this.onSearchChange} />
-        <Scroll>
+        <Sticky>
+          <h1 className='tc f1'>RoboFriends</h1>
+          <SearchBox searchChange={this.onSearchChange} />
+        </Sticky>
+        <ErrorBoundry>
           <CardList robots={filteredRobots}></CardList>
-        </Scroll>
+        </ErrorBoundry>
       </div>
     );
   }
