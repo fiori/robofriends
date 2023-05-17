@@ -1,6 +1,6 @@
-Create-react-app project
--------------
-- Uses React Redux to manage it's states
+React Redux Search App
+=============================================================================================================================
+- Uses React Redux to manage its states
 - Fetch APIs 
 - Allows the user search the fetched results using functional component and Hooks
 
