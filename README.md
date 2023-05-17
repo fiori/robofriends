@@ -5,12 +5,20 @@ React Redux Search App
 - Allows the user search the fetched results using functional component and Hooks
 
 
+
 Package
 
 - react-redux
 - redux
 - redux-logger
 - redux-thunk
+
+## Installation
+
+1. Clone this repo
+2. Run `npm install`
+3. Run `npm start`
+
 
 <p align="left">
 <a href="https://reactjs.org/" target="_blank" rel="noreferrer"><img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/react-colored.svg" width="36" height="36" alt="React" /></a>
