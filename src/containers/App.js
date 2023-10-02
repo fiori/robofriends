@@ -27,6 +27,7 @@ const mapDispatchToProps = dispatch => {
 function App(store) {
   useEffect(() => {
     store.onRequestRobots();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const filteredRobots = store.robots.filter(r => {
@@ -36,9 +37,9 @@ function App(store) {
   return store.isPending ? (
     <h1>Loading</h1>
   ) : (
-    <div className='tc'>
+    <div className="tc">
       <Sticky>
-        <h1 className='tc f1'>RoboFriends</h1>
+        <h1 className="tc f1">RoboFriends</h1>
         <SearchBox searchChange={store.onSearchChange} />
       </Sticky>
       <ErrorBoundry>

@@ -1,0 +1,39 @@
+version: 2.1
+jobs:
+  build:
+    docker:
+      - image: cimg/node:18.18
+    steps:
+      - checkout
+      - run:
+          name: Npm Install
+          command: npm install
+      - run:
+          name: Run Build
+          command: 'CI=true npm run build'
+  # test:
+  #   docker:
+  #     - image: cimg/node:18.18
+  #   steps:
+  #     - checkout
+  #     - run:
+  #         name: 'Npm Install'
+  #         command: npm install
+  #     - run:
+  #         name: 'Run tests'
+  #         command: npm test
+  hithere:
+    docker:
+      - image: cimg/node:18.18
+    steps:
+      - checkout
+      - run: echo "helllloooo!"
+workflows:
+  version: 2
+  build_test_and_lint:
+    jobs:
+      - build
+      - hithere
+      # - test:
+      #     requires:
+      #       - hithere
